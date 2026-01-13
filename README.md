@@ -19,14 +19,6 @@ Welcome! This repository is created to track my daily progress in Python — exp
 2. Keep entries short and focused: objective, what I tried, what worked, what didn’t, and next steps.  
 3. Tag entries with keywords (e.g., `data-science`, `web`, `oop`, `algorithms`) for easy searching.
 
-## Example daily entry format (suggested)
-```markdown
-# 2026-01-13
-- Goal: Practice list comprehensions and file I/O
-- What I did: Wrote a script to read a CSV and generate summary stats
-- Problems: Had a bug with newline handling; solved by using newline='' in csv.reader
-- Next: Try pandas for the same task and compare performance
-```
 
 ## Tips
 - Commit often — a daily snapshot is motivation.  
