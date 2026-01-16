@@ -1,29 +1,21 @@
-sal = int(input("Enter your Salary: "))
-pd_sal = sal/30
-coder_bonus = 0.1*sal
-designer_bonus = 0.15*sal
-Manager_bonus = 0.05*sal
-desg = input('Enter Your Designation: ')
-Leaves = int(input('Enter number of leaves taken: '))
-if (desg=="coder" and Leaves >= 15):
-    salary = sal+coder_bonus - pd_sal*(Leaves-15)
-    print(salary)
-else:
-    salary = sal+coder_bonus
+import logging
+try:
+    sal = float(input("Enter your Salary: "))
+    logging.info("Salary entered: %s", sal)
+except ValueError as e:
+    logging.error("Invalid numeric input for salary: %s", e)
+leaves = int(input("Enter number of leaves taken: "))
+pd_sal = sal / 30.0
+bonuses = {
+    "coder": 0.10 * sal,
+    "designer": 0.15 * sal,
+    "manager": 0.05 * sal
+}
 
+desg = input("Enter Your Designation (coder/designer/manager): ")
+bonus = bonuses[desg]
+extra_leaves = max(0, leaves - 15)
+deduction = pd_sal * extra_leaves
 
-if (desg=="designer" and Leaves >= 15):
-    salary = sal+designer_bonus - pd_sal*(Leaves-15)
-    print(salary)
-else:
-    salary = sal+designer_bonus
-
-
-
-if (desg=="manager" and Leaves >= 15):
-    salary = sal+Manager_bonus - pd_sal*(Leaves-15)
-else:
-    salary = sal+Manager_bonus
-
-
-
+final_salary = sal + bonus - deduction
+print(f"Final salary for {desg.capitalize()}: {final_salary:.2f}")
