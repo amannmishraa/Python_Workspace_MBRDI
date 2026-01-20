@@ -20,6 +20,8 @@ INSERT INTO users (name, age) VALUES (?, ?)
 ''', ("XYZ", 30))
 print("Inserted a user: XYZ, 30")
 
+cursor.execute(''' ''')
+
 # Commit changes
 conn.commit()
 
